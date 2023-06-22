@@ -2,14 +2,16 @@ package com.orcaaa.controller;
 
 import com.orcaaa.entity.Customer;
 import com.orcaaa.service.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customers")
+@RequiredArgsConstructor
 public class CustomerController {
-    @Autowired
-    private CustomerService customerService;
+
+    private final CustomerService customerService;
 
     @PostMapping
     public Customer addCustomer(@RequestBody Customer customer) {
