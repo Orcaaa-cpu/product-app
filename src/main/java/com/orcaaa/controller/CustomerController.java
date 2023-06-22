@@ -18,7 +18,15 @@ public class CustomerController {
     @PostMapping
     public Customer addCustomer(@RequestBody Customer customer) {
         log.info("Entering addCustomer method : ....");
-        return customerService.addCustomer(customer);
+        try {
+            return customerService.addCustomer(customer);
+        } catch (NullPointerException e) {
+            log.error("Null {}", e.getMessage());
+            return null;
+        } catch (Exception e) {
+            log.error("Something 400 client error or 500 internal server error : {}", e.getMessage());
+            return null;
+        }
     }
 
     @PutMapping("/{customerId}")
