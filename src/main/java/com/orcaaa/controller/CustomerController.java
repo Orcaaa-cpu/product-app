@@ -27,7 +27,6 @@ public class CustomerController {
             log.error("Something 400 client error or 500 internal server error : {}", e.getMessage());
             return null;
         }
-
     }
 
     @PutMapping("/{customerId}")
