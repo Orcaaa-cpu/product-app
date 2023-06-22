@@ -1,9 +1,12 @@
 package com.orcaaa.dtos;
 
-import lombok.Data;
+import lombok.*;
 
-@Data
-
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderRequest {
     private String customerId;
     private String productId;
