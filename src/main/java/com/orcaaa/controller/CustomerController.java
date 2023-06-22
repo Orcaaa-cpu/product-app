@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class CustomerController {
 
-    private final CustomerService customerService;
+    private final CustomerService customerServicee;
 
     @PostMapping
     public Customer addCustomer(@RequestBody Customer customer) {
