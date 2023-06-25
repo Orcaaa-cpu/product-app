@@ -1,9 +1,10 @@
 package com.orcaaa.controller;
 
-import com.orcaaa.dtos.OrderRequest;
-import com.orcaaa.entity.Order;
+import com.orcaaa.dtos.request.OrderRequest;
+import com.orcaaa.dtos.response.OrderResponse;
 import com.orcaaa.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +14,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public Order createOrder(@RequestBody OrderRequest orderRequest) {
+    public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest orderRequest) {
         return orderService.createOrder(orderRequest);
     }
 }

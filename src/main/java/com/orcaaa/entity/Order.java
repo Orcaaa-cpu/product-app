@@ -44,5 +44,4 @@ public class Order {
     @Column(name = "order_date")
     private LocalDateTime orderDate;
 
-    // constructors, getters, setters
 }
